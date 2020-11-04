@@ -28,6 +28,7 @@
         <module>micro-base</module>
         <module>micro-seata</module>
         <module>micro-task</module>
+        <module>micro-swagger</module>
     </modules>
     <build>
         <plugins>
