@@ -1,0 +1,31 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:8888/micro-auth/rsa/publicKey'
+  cloud:
+    nacos:
+      config:
+        server-addr:  127.0.0.1:8848
+        file-extension: yaml
+      discovery:
+        server-addr:  127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+  application:
+    name: micro-gateway
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 12345678
+server:
+  port: 8888
+
+white-list:
+  urls:
+    - "/micro-auth/oauth/token"
+    - "/micro-auth/rsa/publicKey"

@@ -1,0 +1,41 @@
+#seata:
+#  enabled: true
+#  application-id: seata-auth
+#  tx-service-group: my_test_tx_group
+#  enable-auto-data-source-proxy: true
+#  use-jdk-proxy: false
+#  config:
+#    type: nacos
+#    nacos:
+#      namespace:
+#      serverAddr: 127.0.0.1:8848
+#      group: SEATA_GROUP
+#      userName: nacos
+#      password: nacos
+#  registry:
+#    type: nacos
+#    nacos:
+#      application: seata-server
+#      server-addr: 127.0.0.1:8848
+#      namespace:
+#      userName: nacos
+#      password: nacos
+server:
+  port: 3031
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+  main:
+    allow-bean-definition-overriding: true
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
